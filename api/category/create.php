@@ -23,14 +23,13 @@ $data = json_decode(file_get_contents("php://input"));
 // make sure data is not empty
 if(
     !empty($data->name) &&
-    !empty($data->description) &&
-    !empty($data->id)
+    !empty($data->description)
 ){
  
     // set category property values
     $category->name = $data->name;
     $category->description = $data->description;
-    $category->category_id = $data->id;
+
  
     // create the category
     if($category->create()){
